@@ -21,7 +21,7 @@ body, html {
 /* Styling for the component selection panel */
 .component-panel {
     width: 25%; /* Increased width to ensure the content fits */
-    background-color: #f4f4f4;
+    background-color: #111010;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -60,6 +60,30 @@ body, html {
     background-color: #FF9900; /* AWS signature orange */
 }
 
+#api_gateway { 
+    background-color: #1ABC9C; /* API gateway hue */
+}
+
+#msg_queue {
+    background-color: #17A2B8; /* Teal color for the Message Queue */
+}
+
+#cdn {
+    background-color: #DC143C; /* Teal color for the CDN */
+}
+
+#dns {
+    background-color: #6A5ACD; /* Slate Blue for the DNS*/
+}
+
+#firewall {
+    background-color: #D35400; /* Burnt Orange */
+}
+
+#aths {
+    background-color: #4169E1; /* Royal Blue */
+}
+
 .component {
     width: 60px;
     height: 60px;
@@ -86,16 +110,32 @@ body, html {
 .component:hover::after {
     content: attr(data-tooltip); /* Use the data-tooltip attribute to show the name */
     position: absolute;
-    top: 50%;
-    left: 80px; /* Position it to the right of the circle */
-    transform: translateY(-50%);
+    top: 50%; /* Place the tooltip above the component */
+    left: 175%;
+    transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
     white-space: nowrap;
-    z-index: 10;
+    z-index: 999; /* Ensure the tooltip appears above other components */
+}
+
+#components {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#right-column {
+    position: absolute;
+    top: 7.5%;
+    left: 12%;  /* Adjust this value to control how far to the right the second column appears */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Space between components in the right column */
 }
 
 /* Main window where the graph will be displayed */
@@ -141,11 +181,40 @@ body, html {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    position: relative;
+    top: -28px;
 }
 
 .input-bar button:hover {
     background-color: #218838;
 }
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* Positioning it just below the mic button */
+    position: relative;
+    top: 17px;  /* Adjust this value as needed */
+    display: block;
+    margin-top: 10px; /* Space between the two buttons */
+    left: -55px;
+}
+
+#send-button i {
+    margin-right: 5px;  /* Space between the arrow icon and text */
+}
+
+#send-button:hover {
+    background-color: #218838;  /* Change button color on hover */
+}
+
 
 /* Styling for the "Select Components" text */
 .component-panel h3 {
@@ -154,10 +223,11 @@ body, html {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 20px;
-    color: #333;
+    color: #f2eeee;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     max-width: 100%;
     word-wrap: break-word;
+    align-self: center;
 }
 
 /* Styling for components placed in the main window */

@@ -1227,7 +1227,7 @@ function cleanupAfterDelete() {
     endComponent = null;
 
     // Reset the button text and color
-    document.getElementById('delete').textContent = 'Delete';
+    document.getElementById('delete').textContent = 'Delete Component';
     document.getElementById('delete').style.backgroundColor = '#007BFF';
     
     enableComponentSelection();

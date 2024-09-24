@@ -323,6 +323,24 @@ function createComponentInGraphWindow(componentId, componentName, componentColor
         case 'aws':
             newComponent.innerHTML = '<i class="fab fa-aws"></i>';
             break;
+            case 'api_gateway':
+                newComponent.innerHTML = '<i class="fa-solid fa-code"></i>';
+                break;
+            case 'msg_queue':
+                newComponent.innerHTML = '<i class="fa-solid fa-message"></i>';
+                break;
+            case 'cdn':
+                newComponent.innerHTML = '<i class="fa-solid fa-cloud-upload-alt"></i> <i class="fa-solid fa-cloud-download-alt"></i>';
+                break;
+            case 'dns':
+                newComponent.innerHTML = '<i class="fas fa-globe"></i><i class="fas fa-address-book"></i>';
+                break;
+            case 'firewall':
+                newComponent.innerHTML = '<i class="fas fa-shield-halved"></i><i class="fas fa-fire"></i>';
+                break;
+            case 'aths':
+                newComponent.innerHTML = '<i class="fas fa-server"></i><i class="fas fa-user"></i>';
+                break;
         default:
             return;  // Exit if the component ID is unrecognized
     }
