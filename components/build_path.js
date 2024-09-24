@@ -1215,7 +1215,7 @@ function cleanupAfterConnection() {
 
     // Reset the button text and color
     document.getElementById('build-connection').textContent = 'Build Connection';
-    document.getElementById('build-connection').style.backgroundColor = '#007BFF';
+    document.getElementById('build-connection').style.backgroundColor = '#28a745';
     enableComponentSelection();
     console.log("Connection mode cleaned up.");
 }
@@ -1228,7 +1228,7 @@ function cleanupAfterDelete() {
 
     // Reset the button text and color
     document.getElementById('delete').textContent = 'Delete Component';
-    document.getElementById('delete').style.backgroundColor = '#007BFF';
+    document.getElementById('delete').style.backgroundColor = '#28a745';
     
     enableComponentSelection();
     console.log("Delete mode cleaned up.");

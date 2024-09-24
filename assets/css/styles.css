@@ -310,3 +310,20 @@ svg {
     100% { transform: translate(-1px, 1px); }
 }
 
+/* Styling for the Stop button */
+#stop-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 1px;
+    transition: background-color 0.3s ease;
+    margin-right: 1px;
+}
+
+#stop-button:hover {
+    background-color: darkred; /* Slightly darker shade on hover */
+}
