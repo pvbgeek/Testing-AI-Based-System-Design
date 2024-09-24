@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISysD System Design Simulator</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Updated Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>   
+    <div class="container">
+        <!-- Left column for component selection -->
+        <div class="component-panel">
+            <h3>Select Components</h3>
+            <div id="components">
+                <!-- Circular icons for different components with tooltips -->
+                <div class="component" id="load_balancer" data-tooltip="Load Balancer">
+                    <i class="fas fa-network-wired fa-beat-fade"></i>
+                </div>
+                <div class="component" id="server" data-tooltip="Server">
+                    <i class="fas fa-server fa-beat-fade"></i>
+                </div>
+                <div class="component" id="client" data-tooltip="Client">
+                    <i class="fas fa-user fa-beat-fade"></i>
+                </div>
+                <div class="component" id="cache" data-tooltip="Cache">
+                    <i class="fa-solid fa-memory fa-beat-fade"></i>
+                </div>                
+                <div class="component" id="database" data-tooltip="Database">
+                    <i class="fas fa-database fa-beat-fade"></i>
+                </div>
+                <div class="component" id="aws" data-tooltip="AWS">
+                    <i class="fab fa-aws fa-beat-fade"></i>
+                </div>
+                <button id="build-connection" 
+                style="
+                        background-color: #007BFF; 
+                        color: white; 
+                        border: none; 
+                        padding: 10px 20px; 
+                        font-size: 16px; 
+                        cursor: pointer; 
+                        border-radius: 5px; 
+                        text-align: left; 
+                        margin-bottom: 10px; 
+                        position: absolute; 
+                        bottom: 125px; 
+                        left: 7%; 
+                        transform: translateX(-50%);
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        z-index: 1;">
+                Build Connection
+            </button>
+            <button id="delete" 
+                style="
+                        background-color: #007BFF; 
+                        color: white; 
+                        border: none; 
+                        padding: 10px 20px; 
+                        font-size: 16px; 
+                        cursor: pointer; 
+                        border-radius: 5px; 
+                        text-align: left; 
+                        margin-bottom: 10px; 
+                        position: absolute; 
+                        bottom: 125px; 
+                        left: 18%; 
+                        transform: translateX(-50%);
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        z-index: 1;">
+                Delete
+            </button>        
+            </div>
+        </div>
+
+        <!-- Main window for graph visualization -->
+        <div class="main-window" id="graph-window">
+            <!-- D3.js will render the graph here -->
+        </div>
+
+        <!-- Bottom bar for input -->
+        <div class="input-bar">
+            <textarea id="user-input" placeholder="Describe your system..."></textarea>
+            <button id="mic-button">🎤</button>
+        </div>
+    </div>
+    <script src="./scripts/graph.js"></script>
+    <script src="./components/build_path.js"></script>
+</body>
+</html>
