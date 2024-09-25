@@ -284,17 +284,21 @@ const graphWindow = document.getElementById('graph-window');
 // Add event listeners to each component in the component panel
 const components = document.querySelectorAll('.component');
 
-components.forEach(component => {
-    component.addEventListener('click', function() {
-        // Get the component's ID, tooltip (name), and background color
-        const componentId = this.id;
-        const componentName = this.getAttribute('data-tooltip');
-        const componentColor = window.getComputedStyle(this).backgroundColor;
 
-        // Create a new component in the main window
-        createComponentInGraphWindow(componentId, componentName, componentColor);
-    });
+
+components.forEach(component => {
+    component.addEventListener('click', createComponent.bind(this));
 });
+
+function createComponent(component) {
+    // Get the component's ID, tooltip (name), and background color
+    const componentId = component.id;
+    const componentName = component.getAttribute('data-tooltip');
+    const componentColor = window.getComputedStyle(component).backgroundColor;
+
+    // Create a new component in the main window
+    createComponentInGraphWindow(componentId, componentName, componentColor);
+}
 
 function createComponentInGraphWindow(componentId, componentName, componentColor) {
     // Create a div for the component
