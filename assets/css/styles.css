@@ -18,11 +18,18 @@ body, html {
     position: relative;
 }
 
+.graph-input-container {
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    flex: 1;
+}
+
 /* Styling for the component selection panel */
 .component-panel {
-    width: 25%; /* Increased width to ensure the content fits */
+    width: 100%;
+    max-width: 300px;
     background-color: #111010;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -30,9 +37,10 @@ body, html {
 }
 
 #components {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     gap: 15px;
+    width: 100%;
 }
 
 /* Circular component styling with unique colors */
@@ -95,7 +103,6 @@ body, html {
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
     position: relative;
-    margin-left: 15px; /* Shift the circles slightly to the right */
 }
 
 .component i {
@@ -104,30 +111,31 @@ body, html {
 
 .component:hover {
     transform: scale(1.1);
+    z-index: 10;
 }
 
 /* Add tooltip on hover for components in the left panel */
 .component:hover::after {
     content: attr(data-tooltip); /* Use the data-tooltip attribute to show the name */
     position: absolute;
-    top: 50%; /* Place the tooltip above the component */
-    left: 175%;
-    transform: translateX(-50%);
+    bottom: -30px;
+    left: 30px;
+    /* transform: translateX(-50%); */
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
     white-space: nowrap;
-    z-index: 999; /* Ensure the tooltip appears above other components */
+    z-index: 2; /* Ensure the tooltip appears above other components */
 }
 
-#components {
+/* #components {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
+} */
 
 #right-column {
     position: absolute;
@@ -151,14 +159,13 @@ body, html {
 
 /* Input bar styling */
 .input-bar {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     padding: 15px;
     background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 .input-bar textarea {
@@ -167,9 +174,9 @@ body, html {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    margin-right: 10px;
     font-size: 16px;
     resize: none;
+    flex: 1;
 }
 
 .input-bar button {
@@ -181,8 +188,6 @@ body, html {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    position: relative;
-    top: -28px;
 }
 
 .input-bar button:hover {
@@ -198,13 +203,8 @@ body, html {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
-    /* Positioning it just below the mic button */
-    position: relative;
-    top: 17px;  /* Adjust this value as needed */
     display: block;
     margin-top: 10px; /* Space between the two buttons */
-    left: -55px;
 }
 
 #send-button i {
@@ -327,3 +327,24 @@ svg {
 #stop-button:hover {
     background-color: darkred; /* Slightly darker shade on hover */
 }
+.button {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    text-align: center; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.buttons {
+    display: grid;
+    width: 100%;
+    gap: 20px;
+    margin-top: 30px;
+}
+
