@@ -75,7 +75,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 
 let recognition = null;
 let micButton = document.getElementById('mic-button');
-let stopButton = null;
+let stopButton = document.getElementById('stop-button');
 let isRecording = false;
 
 // Initialize Speech Recognition
@@ -124,9 +124,8 @@ function startRecording() {
 
         // Create and show the Stop button next to mic button
         stopButton = document.createElement('button');
-        stopButton.textContent = 'Stop';
+        stopButton.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
         stopButton.style.backgroundColor = 'red';
-        stopButton.style.marginLeft = '-6%';
         stopButton.onclick = stopRecording;
         micButton.parentElement.appendChild(stopButton);
     }
@@ -149,3 +148,4 @@ function stopRecording() {
 
 // Event listener to start recording on mic button click
 micButton.addEventListener('click', startRecording);
+stopButton.addEventListener('click', stopRecording);

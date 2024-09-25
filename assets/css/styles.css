@@ -168,6 +168,31 @@ body, html {
     gap: 10px;
 }
 
+.input-buttons {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 10px;  /* Space between the vertical stack */
+}
+
+#mic-stop-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;  /* Space between mic and stop buttons */
+    width: 100%;
+}
+
+#mic-button, #stop-button {
+    display: inline-block;
+    flex: 1;  /* Equal width for mic and stop buttons */
+}
+
+#send-button {
+    margin-top: 20px; /* Space between the mic-stop section and send button */
+    width: 100%; /* Full width for the send button */
+}
+
+
 .input-bar textarea {
     width: 60%;
     height: 100px;
