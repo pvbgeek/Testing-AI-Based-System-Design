@@ -35,48 +35,6 @@
                 <div class="component" id="aws" data-tooltip="AWS">
                     <i class="fa-brands fa-aws"></i>
                 </div>
-                <button id="build-connection" 
-                style="
-                        background-color: #28a745; 
-                        color: white; 
-                        border: none; 
-                        padding: 10px 20px; 
-                        font-size: 16px; 
-                        cursor: pointer; 
-                        border-radius: 5px; 
-                        text-align: center; 
-                        margin-bottom: 10px; 
-                        position: absolute; 
-                        bottom: -45%; 
-                        left: 130%; 
-                        transform: translateX(-50%);
-                        font-family: 'Poppins', sans-serif;
-                        font-weight: 600;
-                        z-index: 1;">
-                Build Connection
-            </button>
-            <button id="delete" 
-                style="
-                        background-color: #28a745; 
-                        color: white; 
-                        border: none; 
-                        padding: 10px 20px; 
-                        font-size: 16px; 
-                        cursor: pointer; 
-                        border-radius: 5px; 
-                        text-align: center; 
-                        margin-bottom: 10px; 
-                        position: absolute; 
-                        bottom: -45%; 
-                        left: 330%; 
-                        transform: translateX(-50%);
-                        font-family: 'Poppins', sans-serif;
-                        font-weight: 600;
-                        z-index: 1;">
-                Delete Component
-            </button>        
-            </div>
-            <div id="right-column" class="column">
                 <div class="component" id="api_gateway" data-tooltip="API Gateway">
                     <i class="fa-solid fa-code"></i>
                 </div>
@@ -96,25 +54,42 @@
                     <i class="fas fa-server"></i><i class="fas fa-user"></i>
                     </div>
             </div>
+            <div class="buttons">
+                <button id="build-connection" class="button">
+                    Build Connection
+                </button>
+                <button id="delete" class="button">
+                    Delete Component
+                </button> 
+                <button id="rearrange" class="button">
+                    Rearrange graph
+                </button> 
+            </div>
         </div>
 
-        <!-- Main window for graph visualization -->
-        <div class="main-window" id="graph-window">
-            <!-- D3.js will render the graph here -->
+        <div class="graph-input-container">
+            <!-- Main window for graph visualization -->
+            <div class="main-window" id="graph-window">
+                <!-- D3.js will render the graph here -->
+            </div>
+    
+            <!-- Bottom bar for input -->
+            <div class="input-bar">
+                <textarea id="user-input" placeholder="Describe your system..."></textarea>
+                <div class="input-buttons">
+                    <button id="mic-button"><i class="fa-solid fa-microphone"></i></button>
+                    <!-- New Send button with an up arrow -->
+                    <button id="send-button">
+                        <i class="fas fa-arrow-up"></i> Send
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- Bottom bar for input -->
-        <div class="input-bar">
-            <textarea id="user-input" placeholder="Describe your system..."></textarea>
-            <button id="mic-button"><i class="fa-solid fa-microphone"></i></button>
-            <!-- New Send button with an up arrow -->
-            <button id="send-button">
-                <i class="fas fa-arrow-up"></i> Send
-            </button>
-        </div>
     </div>
     <script src="./scripts/graph.js"></script>
     <script src="./components/build_path.js"></script>
     <script src="./scripts/api.js"></script>
+    <script src="./scripts/mic.js"></script>
 </body>
 </html>
