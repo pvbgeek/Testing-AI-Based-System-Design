@@ -287,7 +287,9 @@ const components = document.querySelectorAll('.component');
 
 
 components.forEach(component => {
-    component.addEventListener('click', createComponent.bind(this));
+    component.addEventListener('click', function() {
+        createComponent(this);
+    });
 });
 
 function createComponent(component) {
