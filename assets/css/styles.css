@@ -148,7 +148,8 @@ body, html {
 
 /* Main window where the graph will be displayed */
 .main-window {
-    width: 75%; /* Adjusted to complement the increased component panel width */
+    width: 99%; /* Adjusted to complement the increased component panel width */
+    height: 100%;
     background-color: #ffffff;
     border-left: 2px solid #ccc;
     position: relative;
