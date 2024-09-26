@@ -1143,10 +1143,9 @@ function handleComponentClickForConnection(event) {
         }
         console.log("Second component selected:", endComponent.getAttribute('data-tooltip'));
 
-        // Check if the connection already exists
+        // Check if the connection already exists in the specified direction
         const connectionExists = connections.some(conn => {
-            return (conn.start === startComponent && conn.end === endComponent) ||
-                (conn.start === endComponent && conn.end === startComponent);
+            return (conn.start === startComponent && conn.end === endComponent);
         });
 
         if (!connectionExists) {
@@ -1154,7 +1153,7 @@ function handleComponentClickForConnection(event) {
             connections.push({ start: startComponent, end: endComponent });
             console.log("Connection created.");
         } else {
-            console.log("Connection already exists. No new arrow drawn.");
+            console.log("Connection already exists in this direction. No new arrow drawn.");
         }
         cleanupAfterConnection();
     }
