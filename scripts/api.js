@@ -53,13 +53,13 @@ graph.forEach(node => {
     node.adjacencyList.forEach(createNode);
 });
 
-// graph.forEach(node => {
-//     const soruceNode = document.querySelector(`#graph-window div[name='${getNodeName(node)}']`);
-//     node.adjacencyList.forEach(adjacentNode => {
-//         const destinationNode = document.querySelector(`#graph-window div[name='${getNodeName(adjacentNode)}']`);
-//         createArrowBetweenComponents(soruceNode, destinationNode);
-//     });
-// });
+graph.forEach(node => {
+    const soruceNode = document.querySelector(`#graph-window div[name='${getNodeName(node)}']`);
+    node.adjacencyList.forEach(adjacentNode => {
+        const destinationNode = document.querySelector(`#graph-window div[name='${getNodeName(adjacentNode)}']`);
+        if(soruceNode && destinationNode) createArrowBetweenComponents(soruceNode, destinationNode);
+    });
+});
 
 
 // Simultaneously for loop select - n times - > trigger
