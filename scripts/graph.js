@@ -292,10 +292,10 @@ components.forEach(component => {
     });
 });
 
-function createComponent(component) {
+function createComponent(component, name = null) {
     // Get the component's ID, tooltip (name), and background color
     const componentId = component.id;
-    const componentName = component.getAttribute('data-tooltip');
+    const componentName = name || component.getAttribute('data-tooltip');
     const componentColor = window.getComputedStyle(component).backgroundColor;
 
     // Create a new component in the main window
@@ -307,6 +307,7 @@ function createComponentInGraphWindow(componentId, componentName, componentColor
     const newComponent = document.createElement('div');
     newComponent.classList.add('graph-component');  // Add a class for styling
     newComponent.setAttribute('data-tooltip', componentName);  // For displaying tooltip
+    newComponent.setAttribute('name', componentName);
     newComponent.style.backgroundColor = componentColor;  // Set the color to match the left panel
 
     // Set the content (icon) for the new component
