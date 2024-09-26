@@ -148,7 +148,8 @@ body, html {
 
 /* Main window where the graph will be displayed */
 .main-window {
-    width: 75%; /* Adjusted to complement the increased component panel width */
+    width: 99%; /* Adjusted to complement the increased component panel width */
+    height: 100%;
     background-color: #ffffff;
     border-left: 2px solid #ccc;
     position: relative;
@@ -167,6 +168,31 @@ body, html {
     align-items: center;
     gap: 10px;
 }
+
+.input-buttons {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 10px;  /* Space between the vertical stack */
+}
+
+#mic-stop-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;  /* Space between mic and stop buttons */
+    width: 100%;
+}
+
+#mic-button, #stop-button {
+    display: inline-block;
+    flex: 1;  /* Equal width for mic and stop buttons */
+}
+
+#send-button {
+    margin-top: 20px; /* Space between the mic-stop section and send button */
+    width: 100%; /* Full width for the send button */
+}
+
 
 .input-bar textarea {
     width: 60%;
@@ -345,6 +371,6 @@ svg {
     display: grid;
     width: 100%;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 80px;
 }
 
