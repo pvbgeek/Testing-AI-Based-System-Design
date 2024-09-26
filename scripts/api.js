@@ -54,10 +54,10 @@ graph.forEach(node => {
 });
 
 graph.forEach(node => {
-    const soruceNode = document.querySelector(`#graph-window div[name='${getNodeName(node)}']`);
+    const sourceNode = document.querySelector(`#graph-window div[name='${getNodeName(node)}']`);
     node.adjacencyList.forEach(adjacentNode => {
         const destinationNode = document.querySelector(`#graph-window div[name='${getNodeName(adjacentNode)}']`);
-        if(soruceNode && destinationNode) createArrowBetweenComponents(soruceNode, destinationNode);
+        if(sourceNode && destinationNode) createArrowBetweenComponents(sourceNode, destinationNode);
     });
 });
 
