@@ -284,23 +284,30 @@ const graphWindow = document.getElementById('graph-window');
 // Add event listeners to each component in the component panel
 const components = document.querySelectorAll('.component');
 
+
+
 components.forEach(component => {
     component.addEventListener('click', function() {
-        // Get the component's ID, tooltip (name), and background color
-        const componentId = this.id;
-        const componentName = this.getAttribute('data-tooltip');
-        const componentColor = window.getComputedStyle(this).backgroundColor;
-
-        // Create a new component in the main window
-        createComponentInGraphWindow(componentId, componentName, componentColor);
+        createComponent(this);
     });
 });
+
+function createComponent(component, name = null) {
+    // Get the component's ID, tooltip (name), and background color
+    const componentId = component.id;
+    const componentName = name || component.getAttribute('data-tooltip');
+    const componentColor = window.getComputedStyle(component).backgroundColor;
+
+    // Create a new component in the main window
+    createComponentInGraphWindow(componentId, componentName, componentColor);
+}
 
 function createComponentInGraphWindow(componentId, componentName, componentColor) {
     // Create a div for the component
     const newComponent = document.createElement('div');
     newComponent.classList.add('graph-component');  // Add a class for styling
     newComponent.setAttribute('data-tooltip', componentName);  // For displaying tooltip
+    newComponent.setAttribute('name', componentName);
     newComponent.style.backgroundColor = componentColor;  // Set the color to match the left panel
 
     // Set the content (icon) for the new component
